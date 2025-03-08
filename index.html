@@ -3,127 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Приглашение на вечер 8 Марта</title>
+    <title> UFC 313 Перейра vs Анкалаев Прямой эфир</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #ffe6f2;
-            color: #333;
-            padding: 20px;
+            background-color: #111;
+            color: white;
+            position: relative;
         }
         .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            position: relative;
+            z-index: 1;
         }
-        .video-container {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px 0;
+        h1 {
+            color: #f00;
         }
-        iframe {
-            width: 30%;
-            height: 200px;
+        .fight-image {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            display: block;
             border-radius: 10px;
         }
-        .invite-text {
-            font-size: 20px;
-            margin: 20px 0;
-        }
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
+        .description {
+            margin: 20px;
             font-size: 18px;
+        }
+        .fight-details {
+            margin: 20px;
+            font-size: 16px;
+            color: #ccc;
+        }
+        .watch-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #f00;
             color: white;
-            background-color: #d63384;
-            border: none;
+            text-decoration: none;
+            font-size: 20px;
             border-radius: 5px;
-            cursor: pointer;
-            margin: 10px;
-        }
-        .button:hover {
-            background-color: #b0256c;
-        }
-        .photo-gallery {
             margin-top: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
-        .photo-gallery .photo-item {
-            margin-bottom: 20px;
-            text-align: center;
+        .side-images {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 150px;
+            background-color: #000;
         }
-        .photo-gallery img {
-            width: 300px;
-            height: auto;
-            border-radius: 10px;
+        .left {
+            left: 0;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/8/89/UFC_Logo.svg') center/cover no-repeat;
         }
-        .photo-gallery p {
-            font-style: italic;
-            font-family: 'Brush Script MT', cursive;
-            font-size: 22px;
-            margin-top: 10px;
-            color: #555;
+        .right {
+            right: 0;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/8/89/UFC_Logo.svg') center/cover no-repeat;
         }
     </style>
 </head>
 <body>
+    <div class="side-images left"></div>
+    <div class="side-images right"></div>
     <div class="container">
-        <h1>Приглашение на праздничный вечер 8 Марта</h1>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/video1" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/video2" allowfullscreen></iframe>
-            <iframe src="https://www.youtube.com/embed/video3" allowfullscreen></iframe>
+        <h1>ЮФС 313: Перейра vs Анкалаев</h1>
+        <img src="https://ufc.ru/sites/default/files/styles/large/public/2023-11/112423-ufc295-results-embed-2.jpg" alt="Перейра vs Анкалаев" class="fight-image">
+        <div class="description">
+            <p>Главный бой вечера: Алекс Перейра против Магомеда Анкалаева! Этот поединок обещает быть захватывающим и полным неожиданных моментов.</p>
         </div>
-        <p class="invite-text">Дорогие гости! Приглашаем вас на праздничный вечер в честь 8 Марта.</p>
-        <button class="button" onclick="showInvitation()">Посмотреть приглашение</button>
-        <p><strong>Место:</strong> <a href="https://2gis.kz/qyzylorda/geo/70000001059087937" target="_blank">Ыдырысова 66, Кызылорда</a></p>
-        <p><strong>Время:</strong> 15:00</p>
-        <div id="invitation" style="display:none; margin-top:20px;">
-            <img src="invitation.jpg" alt="Приглашение" style="width:100%; max-width:600px; border-radius:10px;">
+        <div class="fight-details">
+            <p>📅 Дата: 9 марта 2025</p>
+            <p>📍 Место: T-Mobile Arena, Лас-Вегас</p>
+            <p>🕒 Время начала: 04:00 (МСК)</p>
         </div>
-        <div class="photo-gallery">
-            <h2>Фотогалерея</h2>
-            <div class="photo-item">
-                <img src="WhatsApp Image 2025-03-07 at 19.31.23.jpeg" alt="Фото 1">
-                <p>"Женщина – это улыбка, свет и вдохновение."</p>
-            </div>
-            <div class="photo-item">
-                <img src="WhatsApp Image 2025-03-07 at 19.31.24.jpeg" alt="Фото 2">
-                <p>"Красота женщины в её глазах и доброте."</p>
-            </div>
-            <div class="photo-item">
-                <img src="WhatsApp Image 2025-03-07 at 19.31.24 (1).jpeg" alt="Фото 3">
-                <p>"Ты – воплощение нежности и любви."</p>
-            </div>
-            <div class="photo-item">
-                <img src="WhatsApp Image 2025-03-07 at 19.31.24 (2).jpeg" alt="Фото 4">
-                <p>"Сияй, ведь этот мир прекрасен благодаря тебе!"</p>
-            </div>
-            <div class="photo-item">
-                <img src="WhatsApp Image 2025-03-07 at 19.31.24 (3).jpeg" alt="Фото 5">
-                <p>"Твоя улыбка – луч солнца в пасмурный день."</p>
-            </div>
-            <div class="photo-item">
-                <img src="WhatsApp Image 2025-03-07 at 19.33.20.jpeg" alt="Фото 6">
-                <p>"Женщина – это нежность, доброта и любовь."</p>
-            </div>
-            <div class="photo-item">
-                <img src="WhatsApp Image 2025-03-07 at 20.46.39.jpeg" alt="Фото 7">
-                <p>"Ты достойна восхищения каждый день!"</p>
-            </div>
-        </div>
+        <a href="https://t.me/+p1Vba7q2fTljNDFi" class="watch-button" target="_blank">Смотреть трансляцию</a>
     </div>
-    <script>
-        function showInvitation() {
-            document.getElementById('invitation').style.display = 'block';
-        }
-    </script>
 </body>
 </html>
+
 
