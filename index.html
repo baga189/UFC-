@@ -3,72 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> UFC 313 Перейра vs Анкалаев Прямой эфир</title>
+    <title>UFC 313 Перейра vs Анкалаев Прямой эфир</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            background-color: #111;
+            background-color: #0d0d0d;
             color: white;
-            position: relative;
+            margin: 0;
+            padding: 0;
         }
         .container {
-            margin-top: 50px;
-            position: relative;
-            z-index: 1;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
         }
         h1 {
-            color: #f00;
+            color: #ff0000;
+            font-size: 28px;
+        }
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
         }
         .fight-image {
-            width: 80%;
-            max-width: 600px;
-            margin: 20px auto;
-            display: block;
+            width: 100%;
+            max-width: 700px;
             border-radius: 10px;
         }
-        .description {
-            margin: 20px;
+        .description, .fight-details, .article {
+            margin: 20px 0;
             font-size: 18px;
+            color: #ddd;
+            text-align: left;
+            padding: 15px;
+            border: 1px solid #ff0000;
+            border-radius: 10px;
+            background-color: #222;
         }
-        .fight-details {
-            margin: 20px;
-            font-size: 16px;
-            color: #ccc;
+        .fight-details p {
+            margin: 5px 0;
         }
-        .watch-button {
+        .watch-button, .vote-button {
             display: inline-block;
-            padding: 15px 30px;
-            background-color: #f00;
+            padding: 12px 25px;
+            background-color: #ff0000;
             color: white;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 18px;
             border-radius: 5px;
-            margin-top: 20px;
+            transition: background 0.3s;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
         }
-        .side-images {
-            position: fixed;
-            top: 0;
-            bottom: 0;
-            width: 150px;
-            background-color: #000;
+        .watch-button:hover, .vote-button:hover {
+            background-color: #cc0000;
         }
-        .left {
-            left: 0;
-            background: url('https://upload.wikimedia.org/wikipedia/commons/8/89/UFC_Logo.svg') center/cover no-repeat;
+        .vote-section {
+            margin-top: 30px;
+            text-align: center;
+            padding: 15px;
+            border: 1px solid #ff0000;
+            border-radius: 10px;
+            background-color: #222;
         }
-        .right {
-            right: 0;
-            background: url('https://upload.wikimedia.org/wikipedia/commons/8/89/UFC_Logo.svg') center/cover no-repeat;
+        .vote-results {
+            margin-top: 10px;
+            font-size: 20px;
         }
     </style>
+    <script>
+        let votes = { pereira: 0, ankalaev: 0 };
+        let hasVoted = localStorage.getItem("ufcVote");
+
+        function vote(winner) {
+            if (hasVoted) {
+                alert("Вы уже проголосовали!");
+                return;
+            }
+            votes[winner]++;
+            localStorage.setItem("ufcVote", winner);
+            hasVoted = true;
+            updateResults();
+        }
+
+        function updateResults() {
+            document.getElementById("pereira-votes").innerText = votes.pereira;
+            document.getElementById("ankalaev-votes").innerText = votes.ankalaev;
+        }
+    </script>
 </head>
 <body>
-    <div class="side-images left"></div>
-    <div class="side-images right"></div>
     <div class="container">
+        <img src="юфс.jpg" alt="UFC 313" class="logo">
         <h1>ЮФС 313: Перейра vs Анкалаев</h1>
-        <img src="https://ufc.ru/sites/default/files/styles/large/public/2023-11/112423-ufc295-results-embed-2.jpg" alt="Перейра vs Анкалаев" class="fight-image">
+        <img src="Переира.jpg" alt="Перейра vs Анкалаев" class="fight-image">
         <div class="description">
             <p>Главный бой вечера: Алекс Перейра против Магомеда Анкалаева! Этот поединок обещает быть захватывающим и полным неожиданных моментов.</p>
         </div>
@@ -77,9 +110,28 @@
             <p>📍 Место: T-Mobile Arena, Лас-Вегас</p>
             <p>🕒 Время начала: 04:00 (МСК)</p>
         </div>
+        <div class="article">
+            <h2>Предыстория боя</h2>
+            <p>Этот поединок станет решающим в полутяжелом весе. Алекс Перейра, чемпион UFC, известный своими мощными ударами, встретится с Магомедом Анкалаевым, опасным борцом и универсальным бойцом.</p>
+            
+            <h2>Путь к титульному бою</h2>
+            <p>Перейра завоевал титул после эффектного нокаута, доказав, что его ударная техника — одна из лучших в UFC. Анкалаев, напротив, прошел сложный путь, одержав победы над сильнейшими соперниками, и теперь он хочет доказать, что достоин титула.</p>
+            
+            <h2>Сравнение бойцов</h2>
+            <p><strong>Алекс Перейра:</strong> обладает невероятной мощью и агрессивным стилем. Он опасен в стойке и может отправить соперника в нокаут одним ударом.</p>
+            <p><strong>Магомед Анкалаев:</strong> универсальный боец, способный вести бой как в стойке, так и в партере. Его борьба и тактика могут стать решающими в этом противостоянии.</p>
+        </div>
         <a href="https://t.me/+p1Vba7q2fTljNDFi" class="watch-button" target="_blank">Смотреть трансляцию</a>
+        
+        <div class="vote-section">
+            <h2>Кто победит?</h2>
+            <button class="vote-button" onclick="vote('pereira')">Алекс Перейра</button>
+            <button class="vote-button" onclick="vote('ankalaev')">Магомед Анкалаев</button>
+            <div class="vote-results">
+                <p>Голоса за Перейру: <span id="pereira-votes">0</span></p>
+                <p>Голоса за Анкалаева: <span id="ankalaev-votes">0</span></p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
-
-
